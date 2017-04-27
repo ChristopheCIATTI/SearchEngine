@@ -23,7 +23,6 @@ http://ccdu13.alwaysdata.net/"yourRepository/"yourpackage"
 
   private function packagist() 
     {
-//         https://packagist.org/packages/seeren/view.json
         $url= "https://packagist.org/packages/"
         . $this->package . ".json";
         $obj = $this->consume($url, true);

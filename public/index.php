@@ -6,7 +6,7 @@ use SearchEngine\api\Model\PackageModel;
 
 require "../vendor/autoload.php";
 
-header("Content-Type : application/json; charset=utf8");
+header("Content-Type: application/json; charset=utf8");
 
 echo (
     new PackageController(

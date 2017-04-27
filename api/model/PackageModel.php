@@ -49,9 +49,9 @@ implements SubjectInterface, PackageModelInterface
     private function consume($url, $ping = false)
     {
         $filename = __DIR__ . "/cache/" .md5($url);
-        if (file_exists($filename)) {
-            $ouput = file_get_contents($filename);
-        } else {
+//         if (file_exists($filename)) {
+//             $ouput = file_get_contents($filename);
+//         } else {
             $code = "404";
             $ouput = @file_get_contents($url);
             
@@ -61,8 +61,11 @@ implements SubjectInterface, PackageModelInterface
             }
             if ($code === "200") {
                 file_put_contents($filename, $ping ? $url : $ouput);
+            } else {
+                $ping = false;
             }
-        }
+            
+//         }
         return $ping ? $ping : json_decode($ouput);
     }
 
@@ -135,7 +138,7 @@ implements SubjectInterface, PackageModelInterface
         if ($obj === true) {
             $this->distribuable = true;
             return true;
-        }
+        } 
         return false;
     }
     private function npm()
@@ -152,6 +155,10 @@ implements SubjectInterface, PackageModelInterface
     }
     private function consumeTravis ()
     {
+        ($this->consume(
+            "https://raw.githubusercontent.com/"
+            . $this->package . "/master/.travis.yml", true));
+        
         $this->testable = (bool) $this->consume(
             "https://raw.githubusercontent.com/"
              . $this->package . "/master/.travis.yml", true);
@@ -159,8 +166,7 @@ implements SubjectInterface, PackageModelInterface
     public function get()
     {
         if (!$this->jsonLoader()
-         && !$this->jsonComposer()
-            && !$this->packagist()) {
+         && !$this->jsonComposer()) {
         throw new \RuntimeException();
         
             }

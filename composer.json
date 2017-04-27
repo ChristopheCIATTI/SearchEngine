@@ -1,0 +1,20 @@
+{
+	"name" : "administrateur/formation-php",
+	"require" : {
+		"psr/log" : "1.0.2",
+		"phpunit/phpunit" : "6.1"
+	},
+	"autoload" : {
+		"psr-4" : {
+			"Formation\\MVC\\" : "cours/poo/mvc/",
+			"SearchEngine\\api\\Controller\\" : "api/controller/",
+			"SearchEngine\\api\\Model\\" : "api/model/",
+			"SearchEngine\\api\\View\\" : "api/view/",
+			"SearchEngine\\Controller\\" : "app/controller/",
+			"SearchEngine\\Model\\" : "app/model/",
+			"SearchEngine\\View\\" : "app/view/",
+			"SearchEngine\\Test\\" : "test/",
+			"Library\\Manager\\" : "lib/manager/"
+		}
+	}
+}

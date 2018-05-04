@@ -9,17 +9,17 @@
 SearchEngine is simple search engine for package.json in a github, npm and packagist  
  
  
- #API Demo 
+ # API Demo 
 http://ccdu13.alwaysdata.net
 
-#How to use : 
+# How to use : 
 
 in the address bar writen "yourRepository/"yourpackage"  follow http://ccdu13.alwaysdata.net
 
 exemple for using 
 http://ccdu13.alwaysdata.net/"yourRepository/"yourpackage"  
 
-#Code example  
+# Code example  
 
   private function packagist() 
     {
@@ -33,7 +33,7 @@ http://ccdu13.alwaysdata.net/"yourRepository/"yourpackage"
         return false;
     }
 
-#Result example 
+# Result example 
 
 distribuable	true
 testable	true
@@ -55,11 +55,11 @@ name	"administrateur/formation-php"
 author	""
 
 
-#Jeancia author
+# Jeancia author
 
 Jeancia author
 
-#licence
+# licence
 
 Jeancia MIT
 
